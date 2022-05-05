@@ -46,9 +46,9 @@ zcounting = DQMEDAnalyzer('ZCounting',
                                  LumiMin  = cms.untracked.double(0.5),
                                  LumiMax  = cms.untracked.double(2500.5),
 
-                                 PVBin    = cms.untracked.int32(60),     
+                                 PVBin    = cms.untracked.int32(100),       # PVBin    = cms.untracked.int32(60),
                                  PVMin    = cms.untracked.double(0.5),
-                                 PVMax    = cms.untracked.double(100.5), # PVMax    = cms.untracked.double(60.5),
+                                 PVMax    = cms.untracked.double(100.5),   # PVMax    = cms.untracked.double(60.5),
 
                                  VtxNTracksFitMin = cms.untracked.double(0.),
                                  VtxNdofMin       = cms.untracked.double(4.),
