@@ -87,6 +87,7 @@ namespace muon {
 		    bool   applyAlsoAngularCuts = false);
 
    bool isTightMuon(const reco::Muon&, const reco::Vertex&);
+   bool isCustomTightMuon(const reco::Muon&);   // New CustomID
    bool isLooseMuon(const reco::Muon&);
    bool isMediumMuon(const reco::Muon&, bool run2016_hip_mitigation=false);
    bool isSoftMuon(const reco::Muon&, const reco::Vertex&, bool run2016_hip_mitigation=false);

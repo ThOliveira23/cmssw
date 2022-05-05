@@ -866,6 +866,19 @@ bool muon::isTightMuon(const reco::Muon& muon, const reco::Vertex& vtx){
   return muID && hits && ip;
 }
 
+// The new CustomID
+bool muon::isCustomTightMuon(const reco::Muon& muon) {
+
+  if(!muon.isPFMuon() || !muon.isGlobalMuon() ) return false;
+
+  bool muID = isGoodMuon(muon,GlobalMuonPromptTight) && (muon.numberOfMatchedStations() > 1);
+
+  bool hits = muon.innerTrack()->hitPattern().trackerLayersWithMeasurement() > 5 &&
+    muon.innerTrack()->hitPattern().numberOfValidPixelHits() > 0; 
+
+  return muID && hits;
+}
+
 
 bool muon::isLooseMuon(const reco::Muon& muon){
   return muon.isPFMuon() && ( muon.isGlobalMuon() || muon.isTrackerMuon());
