@@ -256,7 +256,8 @@ void ZCounting::analyzeMuons(const edm::Event& iEvent, const edm::EventSetup& iS
   h_npv->Fill(iEvent.luminosityBlock(), nvtx);
 
   // Good vertex requirement
-  if(nvtx==0) return;
+  // We should not reject events with NPV=0
+  //if(nvtx==0) return;
 
   //-------------------------------
   //--- Trigger 
@@ -465,7 +466,7 @@ void ZCounting::analyzeMuons(const edm::Event& iEvent, const edm::EventSetup& iS
       if((dilepMass < MassMin_) || (dilepMass > MassMax_)) continue;
 
       bool isTrackCentral = false;
-      if(fabs(eta2) > MUON_BOUND) isTrackCentral = true;
+      if(fabs(eta2) < MUON_BOUND) isTrackCentral = true; // if(fabs(eta2) > MUON_BOUND) isTrackCentral = true;
 
       if(itTrk.hitPattern().trackerLayersWithMeasurement() >= 6 && itTrk.hitPattern().numberOfValidPixelHits() >= 1){
         if(isTrackCentral) h_mass_Glo_fail_central->Fill(iEvent.luminosityBlock(), dilepMass);
