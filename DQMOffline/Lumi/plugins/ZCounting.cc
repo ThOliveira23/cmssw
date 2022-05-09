@@ -741,6 +741,25 @@ bool ZCounting::isMuonTriggerObj(const ZCountingTrigger::TTrigger &triggerMenu, 
   return false;
 }
 
+
+bool ZCounting::isCustomTightMuon(const reco::Muon& muon) {
+
+if(!muon.isPFMuon() || !muon.isGlobalMuon() ) return false;
+
+bool muID = isGoodMuon(muon,muon::GlobalMuonPromptTight) && (muon.numberOfMatchedStations() > 1);
+    
+  
+bool hits = muon.innerTrack()->hitPattern().trackerLayersWithMeasurement() > 5 &&
+  muon.innerTrack()->hitPattern().numberOfValidPixelHits() > 0; 
+
+
+return muID && hits;
+
+
+}
+
+
+
 //--------------------------------------------------------------------------------------------------
 bool ZCounting::passMuonID(const reco::Muon& muon, const reco::Vertex& vtx, const MuonIDTypes &idType)
 {//Muon ID selection, using internal function "DataFormats/MuonReco/src/MuonSelectors.cc
@@ -748,7 +767,7 @@ bool ZCounting::passMuonID(const reco::Muon& muon, const reco::Vertex& vtx, cons
   if     (idType == LooseID  && muon::isLooseMuon(muon))      return true;
   else if(idType == MediumID && muon::isMediumMuon(muon))     return true;
   else if(idType == TightID  && muon::isTightMuon(muon, vtx)) return true;
-  else if(idType == TightID  && muon::isCustomTightMuon(muon)) return true; //to be implemented
+  else if(idType == TightID  && isCustomTightMuon(muon))      return true; //to be implemented
   else if(idType == NoneID)                                   return true;
   else                                                        return false;
 }
