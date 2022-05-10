@@ -46,7 +46,7 @@ public:
   ZCounting(const edm::ParameterSet& ps);
   ~ZCounting() override;
 
-  enum MuonIDTypes  { NoneID, LooseID, MediumID, TightID };
+  enum MuonIDTypes  { NoneID, LooseID, MediumID, TightID, CustomTightID };
   enum MuonIsoTypes { NoneIso, TrackerIso, PFIso };
   
 protected:
