@@ -767,7 +767,7 @@ bool ZCounting::passMuonID(const reco::Muon& muon, const reco::Vertex& vtx, cons
   if     (idType == LooseID  && muon::isLooseMuon(muon))      return true;
   else if(idType == MediumID && muon::isMediumMuon(muon))     return true;
   else if(idType == TightID  && muon::isTightMuon(muon, vtx)) return true;
-  else if(idType == TightID  && isCustomTightMuon(muon))      return true; //to be implemented
+  else if(idType == CustomTightID  && isCustomTightMuon(muon))      return true; //to be implemented
   else if(idType == NoneID)                                   return true;
   else                                                        return false;
 }

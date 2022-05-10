@@ -25,7 +25,7 @@ process.GlobalTag.globaltag = '101X_dataRun2_Prompt_v9'
 
 # trigger filter
 process.load('HLTrigger/HLTfilters/hltHighLevel_cfi')
-process.hltHighLevel.throw = cms.bool(False)
+process.hltHighLevel.throw = cms.bool(True)
 process.hltHighLevel.HLTPaths = cms.vstring()
 
 
@@ -35,7 +35,8 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 process.source = cms.Source("PoolSource",
                                 fileNames = cms.untracked.vstring(
 #'/store/data/Run2017B/SingleMuon/RECO/PromptReco-v1/000/297/218/00000/14C84999-6457-E711-AAE4-02163E0136E0.root'
-'file:/eos/cms/store/data/Run2018D/SingleMuon/AOD/22Jan2019-v2/110000/104D2C01-12D2-0742-BE61-897755323EDE.root'
+#'file:/eos/cms/store/data/Run2018D/SingleMuon/AOD/22Jan2019-v2/110000/104D2C01-12D2-0742-BE61-897755323EDE.root'
+'file:/eos/cms/store/data/Run2018C/SingleMuon/AOD/12Nov2019_UL2018-v3/140000/437E6AB4-3C6D-234F-A56C-1B479943D861.root' 
                                 )
                                 )
 
@@ -43,7 +44,7 @@ process.source.inputCommands = cms.untracked.vstring("keep *",
                                                          "drop *_MEtoEDMConverter_*_*")
 
 process.options = cms.untracked.PSet(
-  wantSummary = cms.untracked.bool(False),
+  wantSummary = cms.untracked.bool(True),
   Rethrow     = cms.untracked.vstring('ProductNotFound'),
   fileMode    = cms.untracked.string('FULLMERGE')
   )
