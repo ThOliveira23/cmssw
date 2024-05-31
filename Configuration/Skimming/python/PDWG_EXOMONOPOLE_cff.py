@@ -21,7 +21,7 @@ hltMonopole.HLTPaths = cms.vstring(
     #"HLT_Photon200_v*",
     #"HLT_DoublePhoton70_v*",
     #"HLT_DoublePhoton85_v*",
-    # 2024: EGamma and JetMET,MET datasets
+    #2024: on EGamma and JetMET,MET datasets
     "HLT_Photon175_v*",
     "HLT_Photon200_v*",
     "HLT_PFMET170_HBHECleaned_v*",
