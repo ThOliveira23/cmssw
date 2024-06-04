@@ -3,7 +3,7 @@ autoSkim = {
  # Skim 2023
  'BTagMu' : 'LogError+LogErrorMonitor',
  'DisplacedJet' : 'EXODisplacedJet+EXODelayedJet+EXODTCluster+EXOCSCCluster+EXOLLPJetHCAL+LogError+LogErrorMonitor',
- 'JetMET0' : 'JetHTJetPlusHOFilter+EXOHighMET+EXODelayedJetMET+EXODisappTrk+EXOSoftDisplacedVertices+TeVJet+LogError+LogErrorMonitor',
+ 'JetMET0' : 'JetHTJetPlusHOFilter+EXOHighMET+EXODelayedJetMET+EXOMONOPOLE+EXODisappTrk+EXOSoftDisplacedVertices+TeVJet+LogError+LogErrorMonitor',
  'JetMET1' : 'JetHTJetPlusHOFilter+EXOHighMET+EXODelayedJetMET+EXODisappTrk+EXOSoftDisplacedVertices+TeVJet+LogError+LogErrorMonitor',
  'EGamma0':'EGMJME+ZElectron+WElectron+EXOMONOPOLE+EXODisappTrk+IsoPhotonEB+LogError+LogErrorMonitor',
  'EGamma1':'EGMJME+ZElectron+WElectron+EXOMONOPOLE+EXODisappTrk+IsoPhotonEB+LogError+LogErrorMonitor',
